@@ -1,0 +1,25 @@
+# FastAPI and web server
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-multipart==0.0.6
+
+# Data validation
+pydantic==2.5.3
+pydantic-settings==2.1.0
+
+# CORS and middleware
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# Development and testing
+pytest==7.4.4
+pytest-asyncio==0.23.3
+httpx==0.26.0
+black==24.1.1
+ruff==0.1.14
+
+# Database (SQLite is built-in to Python)
+# No additional requirements needed
+
+# Optional: For production deployment
+gunicorn==21.2.0

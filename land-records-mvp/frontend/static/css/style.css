@@ -1,0 +1,270 @@
+/* Delhi Land Records MVP - Custom Styles */
+
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+}
+
+/* Encumbrance Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.status-clear {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.status-mortgaged {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.status-disputed {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.status-unknown {
+    background-color: #e5e7eb;
+    color: #374151;
+}
+
+/* Property Card */
+.property-card {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.property-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.property-card.selected {
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Comparison Table */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.comparison-table th {
+    background-color: var(--gray-50);
+    font-weight: 600;
+    color: var(--gray-700);
+}
+
+.comparison-table .property-col {
+    background-color: var(--gray-50);
+    font-weight: 500;
+}
+
+.comparison-table .highlight {
+    background-color: #fef3c7;
+    font-weight: 600;
+}
+
+/* Loading Spinner */
+.spinner {
+    border: 3px solid var(--gray-200);
+    border-top: 3px solid var(--primary-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Price Display */
+.price-large {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.price-per-sqm {
+    font-size: 0.875rem;
+    color: var(--gray-700);
+    font-weight: 500;
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+    .comparison-table {
+        font-size: 0.875rem;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.5rem;
+    }
+}
+
+/* Property Detail Page */
+.detail-section {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: var(--gray-700);
+}
+
+.detail-value {
+    color: var(--gray-800);
+}
+
+/* Verification Badge */
+.verification-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.verification-verified {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.verification-crowdsourced {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.verification-estimated {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.verification-unverified {
+    background-color: #e5e7eb;
+    color: #374151;
+}
+
+/* Chart Container */
+.chart-container {
+    position: relative;
+    height: 300px;
+    margin: 1rem 0;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--gray-700);
+}
+
+.empty-state-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+/* Filter Pills */
+.filter-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--gray-100);
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    margin: 0.25rem;
+}
+
+.filter-pill button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--gray-700);
+    font-weight: 600;
+}
+
+/* Pagination */
+.pagination-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--gray-200);
+    background: white;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.pagination-btn:hover {
+    background-color: var(--gray-50);
+}
+
+.pagination-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Insights Box */
+.insight-box {
+    background-color: #eff6ff;
+    border-left: 4px solid var(--primary-color);
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 0.25rem;
+}
+
+.insight-box p {
+    color: var(--gray-700);
+    margin: 0;
+}

@@ -1,0 +1,209 @@
+{
+  "description": "Sample data structures for Delhi Land Records MVP",
+  "last_updated": "2026-01-27",
+  "localities_covered": [
+    "Greater Kailash I",
+    "Greater Kailash II",
+    "Greater Kailash III",
+    "Chitranjan Park"
+  ],
+
+  "sample_properties": [
+    {
+      "id": 1,
+      "plot_number": "A-123",
+      "locality": "Greater Kailash I",
+      "khasra_number": "567/12",
+      "area_sqm": 350.5,
+      "owner_name": "Sample Owner 1 (Anonymized)",
+      "registration_date": "2015-03-15",
+      "last_transaction_date": "2022-08-20",
+      "encumbrance_status": "Clear",
+      "property_type": "Residential",
+      "market_value_estimate": 25000000,
+      "data_source": "Manual Entry",
+      "last_verified": "2026-01-27",
+      "additional_details": {
+        "floor_count": 3,
+        "construction_year": 2014,
+        "facing": "North",
+        "nearby_landmarks": ["M Block Market", "Savitri Cinema"]
+      }
+    },
+    {
+      "id": 2,
+      "plot_number": "M-45",
+      "locality": "Greater Kailash II",
+      "khasra_number": "234/8",
+      "area_sqm": 500.0,
+      "owner_name": "Sample Owner 2 (Anonymized)",
+      "registration_date": "2010-06-12",
+      "last_transaction_date": "2020-11-05",
+      "encumbrance_status": "Mortgaged",
+      "property_type": "Residential",
+      "market_value_estimate": 40000000,
+      "data_source": "Public Listing",
+      "last_verified": "2026-01-25",
+      "additional_details": {
+        "floor_count": 4,
+        "construction_year": 2009,
+        "facing": "East",
+        "nearby_landmarks": ["N Block Market", "Select Citywalk Mall"],
+        "mortgage_details": {
+          "bank": "HDFC Bank",
+          "mortgage_date": "2020-11-05",
+          "note": "As per public records"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "plot_number": "F-78",
+      "locality": "Chitranjan Park",
+      "khasra_number": "891/5",
+      "area_sqm": 250.0,
+      "owner_name": "Sample Owner 3 (Anonymized)",
+      "registration_date": "2018-09-30",
+      "last_transaction_date": "2018-09-30",
+      "encumbrance_status": "Clear",
+      "property_type": "Residential",
+      "market_value_estimate": 18000000,
+      "data_source": "Crowdsourced",
+      "last_verified": "2026-01-20",
+      "additional_details": {
+        "floor_count": 2,
+        "construction_year": 2017,
+        "facing": "South",
+        "nearby_landmarks": ["Kalkaji Mandir Metro", "CR Park Bengali Market"]
+      }
+    },
+    {
+      "id": 4,
+      "plot_number": "S-156",
+      "locality": "Greater Kailash III",
+      "khasra_number": "445/20",
+      "area_sqm": 600.0,
+      "owner_name": "Sample Owner 4 (Anonymized)",
+      "registration_date": "2005-02-28",
+      "last_transaction_date": "2023-04-15",
+      "encumbrance_status": "Disputed",
+      "property_type": "Commercial",
+      "market_value_estimate": 60000000,
+      "data_source": "Manual Portal Query",
+      "last_verified": "2026-01-27",
+      "additional_details": {
+        "floor_count": 5,
+        "construction_year": 2004,
+        "facing": "West",
+        "nearby_landmarks": ["Nehru Place Metro"],
+        "dispute_details": {
+          "type": "Property boundary dispute",
+          "status": "Pending in court",
+          "note": "Verify before transaction"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "plot_number": "C-92",
+      "locality": "Greater Kailash I",
+      "khasra_number": "678/3",
+      "area_sqm": 400.0,
+      "owner_name": "Sample Owner 5 (Anonymized)",
+      "registration_date": "2012-11-18",
+      "last_transaction_date": "2021-07-22",
+      "encumbrance_status": "Clear",
+      "property_type": "Residential",
+      "market_value_estimate": 32000000,
+      "data_source": "Public Listing",
+      "last_verified": "2026-01-26",
+      "additional_details": {
+        "floor_count": 3,
+        "construction_year": 2011,
+        "facing": "North-East",
+        "nearby_landmarks": ["Kailash Colony Metro", "M Block Market"]
+      }
+    }
+  ],
+
+  "data_field_definitions": {
+    "plot_number": "Local plot/house number assigned by municipal authority",
+    "locality": "Specific area within Delhi (GK I/II/III or CR Park for MVP)",
+    "khasra_number": "Unique land parcel identifier in revenue records",
+    "area_sqm": "Total plot area in square meters",
+    "owner_name": "Current registered owner (anonymized for privacy)",
+    "registration_date": "Date of original property registration",
+    "last_transaction_date": "Date of most recent sale/transfer",
+    "encumbrance_status": "Legal status: Clear/Mortgaged/Disputed/Unknown",
+    "property_type": "Residential/Commercial/Mixed-use",
+    "market_value_estimate": "Estimated market value in INR (indicative only)",
+    "data_source": "Origin of data: Manual Entry/Public Listing/Crowdsourced/Manual Portal Query",
+    "last_verified": "Date when information was last verified"
+  },
+
+  "encumbrance_status_definitions": {
+    "Clear": "No mortgages, liens, or disputes on record",
+    "Mortgaged": "Property has active home loan or mortgage",
+    "Disputed": "Legal dispute or court case involving property",
+    "Unknown": "Encumbrance status could not be verified"
+  },
+
+  "data_source_definitions": {
+    "Manual Entry": "Data manually entered by administrator from verified documents",
+    "Public Listing": "Information extracted from public real estate listings (99acres, MagicBricks, etc.)",
+    "Crowdsourced": "User-contributed data from property owners",
+    "Manual Portal Query": "Data obtained through individual queries to official DLRC portal"
+  },
+
+  "locality_statistics": {
+    "Greater Kailash I": {
+      "total_sample_properties": 2,
+      "avg_area_sqm": 375.25,
+      "avg_price_per_sqm": 71428,
+      "encumbrance_clear_percentage": 100,
+      "property_types": {
+        "Residential": 2,
+        "Commercial": 0
+      }
+    },
+    "Greater Kailash II": {
+      "total_sample_properties": 1,
+      "avg_area_sqm": 500.0,
+      "avg_price_per_sqm": 80000,
+      "encumbrance_clear_percentage": 0,
+      "property_types": {
+        "Residential": 1,
+        "Commercial": 0
+      }
+    },
+    "Greater Kailash III": {
+      "total_sample_properties": 1,
+      "avg_area_sqm": 600.0,
+      "avg_price_per_sqm": 100000,
+      "encumbrance_clear_percentage": 0,
+      "property_types": {
+        "Residential": 0,
+        "Commercial": 1
+      }
+    },
+    "Chitranjan Park": {
+      "total_sample_properties": 1,
+      "avg_area_sqm": 250.0,
+      "avg_price_per_sqm": 72000,
+      "encumbrance_clear_percentage": 100,
+      "property_types": {
+        "Residential": 1,
+        "Commercial": 0
+      }
+    }
+  },
+
+  "notes": [
+    "All owner names are anonymized to protect privacy",
+    "Market value estimates are indicative and based on 2026 market rates",
+    "Sample data represents diverse property scenarios for MVP testing",
+    "Actual MVP will require 50-100 properties for meaningful analysis",
+    "Data collection should prioritize accuracy and legal compliance",
+    "Always display data source and verification date to users"
+  ]
+}
