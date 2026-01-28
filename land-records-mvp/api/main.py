@@ -118,19 +118,7 @@ async def create_property(property_data: PropertyCreate):
         raise HTTPException(status_code=400, detail=str(e))
 
 
-@app.get("/api/properties/{property_id}", response_model=Property, tags=["Properties"])
-async def get_property(property_id: int):
-    """
-    Get detailed property information by ID
-    Returns full property record including all fields
-    """
-    property_obj = db.get_property_by_id(property_id)
-    if not property_obj:
-        raise HTTPException(status_code=404, detail=f"Property {property_id} not found")
-    return property_obj
-
-
-# Search endpoint
+# Search endpoints (must be before parameterized routes)
 @app.get("/api/properties/search", response_model=PropertySearchResponse, tags=["Search"])
 async def search_properties(
     locality: Optional[str] = Query(None, description="Filter by locality"),
@@ -191,6 +179,19 @@ async def fulltext_search(
         return properties
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
+
+
+# Property detail endpoint (after search routes to avoid conflicts)
+@app.get("/api/properties/{property_id}", response_model=Property, tags=["Properties"])
+async def get_property(property_id: int):
+    """
+    Get detailed property information by ID
+    Returns full property record including all fields
+    """
+    property_obj = db.get_property_by_id(property_id)
+    if not property_obj:
+        raise HTTPException(status_code=404, detail=f"Property {property_id} not found")
+    return property_obj
 
 
 # Comparison endpoint
